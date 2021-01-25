@@ -21,5 +21,37 @@ int main()
        printf("Element[%d] = %d\n", j, n[j] );
     }
     
+    /**
+
+    int z[5];
+    int input;
+
+    printf("Input pt valori : ");
+
+    for (i = 0; i < 5; i++)
+    {
+        scanf("%d",&z[i]);
+        printf("Val este %d \n",z[i]);
+    }
+    
+    **/
+
+    int y[3];
+    int suma = 0;
+    double average;
+
+    for (i = 0; i < 5; i++)
+    {
+        scanf("%d",&y[i]);
+        printf("Val este %d \n",y[i]);
+
+        suma = suma + y[i];
+    }
+
+    average = (double)suma/5;
+    printf("Average = %0.2lf \n",average);
+
+
+    
     return 0;
 }
