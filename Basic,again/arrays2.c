@@ -26,8 +26,9 @@ int main()
         {
             for (j = 0;j < m; j++)
             {
-                printf("Rezultatul [%d][%d] = %d\n",i+1,j+1,x[i][j]);
+                printf("Rezultatul [%d][%d] = %d\t",i+1,j+1,x[i][j]);
             }
+            printf("\n");
         }
 
 
