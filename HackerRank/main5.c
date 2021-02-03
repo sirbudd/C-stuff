@@ -3,6 +3,8 @@
 #include <math.h>
 #include <stdlib.h>
 
+//suma cifrelor unui numar
+
 int main() {
 	
     int n;
