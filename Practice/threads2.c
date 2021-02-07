@@ -24,7 +24,6 @@ int main()
     pthread_t thread1;
     printf("Thread safety \n");
     pthread_create(&thread1,NULL,count,NULL);
-    //count(NULL);
     count(NULL);
     pthread_join(thread1, NULL);
     printf("Done counting %d \n",counter);
