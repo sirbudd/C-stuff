@@ -11,13 +11,16 @@ struct node
 };
 
 void add(struct node *head, int data);
+struct node* add_beginning(struct node *head,int data);
+
 
 int main()
 {
     struct node *head = malloc(sizeof(struct node));
-    head->data = 1;
+    head->data = 2;
     head->link = NULL;
 
+    head = add_beginning(head, 1);
     add(head, 4);
     add(head, 5);
 
@@ -37,16 +40,27 @@ int main()
 
 void add(struct node *head, int data)
 {
-    struct node *ptr, *temp;
-    ptr = head; 
+    struct node  *temp;
     temp = (struct node*)malloc(sizeof(struct node));
 
     temp->data = data;
     temp->link = NULL;
 
-    while(ptr->link != NULL)
+    while(head->link != NULL)
     {
-        ptr = ptr->link;
+        head = head->link;
     }
-    ptr->link = temp;
+    head->link = temp;
+}
+
+struct node* add_beginning(struct node *head,int data)
+{
+    struct node *temp = malloc(sizeof(struct node));
+
+    temp->data = data;
+    temp->link = NULL;
+
+    temp->link = head;
+    head = temp;
+    return head;
 }
