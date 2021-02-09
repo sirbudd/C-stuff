@@ -12,6 +12,7 @@ struct node
 
 void add(struct node *head, int data);
 struct node* add_beginning(struct node *head,int data);
+void add_position(struct node *head, int data, int pos);
 
 
 int main()
@@ -24,17 +25,15 @@ int main()
     add(head, 4);
     add(head, 5);
 
-    if(head == NULL)
-    {
-        printf("List is empty\n");
-    }
+    int position = 3, data = 6;
+    add_position(head, data, position);
 
     while(head != NULL)
     {
         printf("Elementul are valaore = %d\n",head->data);
         head = head->link;
     }
-    
+
     return 0;
 }
 
@@ -63,4 +62,19 @@ struct node* add_beginning(struct node *head,int data) // putem cu pointer dublu
     temp->link = head;
     head = temp;
     return head;
+}
+
+void add_position(struct node *head, int data, int pos)
+{
+    struct node *ptr = malloc(sizeof(struct node));
+    ptr->data = data;
+    ptr->link = NULL;
+
+    pos = pos - 1;
+    while(pos != 1)
+    {
+        head = head->link;
+        pos--;
+    }
+    ptr->link = head;
 }
