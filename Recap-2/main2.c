@@ -3,6 +3,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void citire_array(int nr_lin,int nr_col,int arr[][nr_col]);
+void print_array(int nr_lin,int nr_col,int arr[][nr_col]);
+
 int N;
 int M;
 
@@ -27,10 +30,10 @@ int main()
         {
             printf("Elem = ");
             scanf("%d",&array[i][j]);
-            printf("Elem [%d][%d] = %d\n",i,j,array[i][j]);
+            //printf("Elem [%d][%d] = %d\n",i,j,array[i][j]);
         }
     }
-    printf("%d \n\n",array[0][0]);
+    //printf("%d \n\n",array[0][0]);
     for (int i = 0;i < N; i++)
     {
         for(int j = 0;j < M; j++)
@@ -39,5 +42,40 @@ int main()
         }
         printf("\n");
     }
+
+    int nr_lin = 0, nr_col = 0;
+    printf("Nr lin = ");
+    scanf("%d",&nr_lin);
+    printf("Nr col = ");
+    scanf("%d",&nr_col);
+    int arr[nr_lin][nr_col];
+
+    citire_array(nr_lin,nr_col,arr);
+    print_array(nr_lin,nr_col,arr);
     return 0;
+}
+
+
+void citire_array(int nr_lin,int nr_col,int arr[][nr_col])
+{
+    for (int i = 0;i < nr_lin;i++)
+    {
+        for(int j = 0; j < nr_col;j++)
+        {
+            printf("Elem = ");
+            scanf("%d",&arr[i][j]);
+        }
+    }
+}
+
+void print_array(int nr_lin,int nr_col,int arr[][nr_col])
+{
+    for (int i = 0;i < nr_lin;i++)
+    {
+        for(int j = 0; j < nr_col;j++)
+        {
+            printf("Elem [%d][%d]= %d ",i,j,arr[i][j]);
+        }
+        printf("\n");
+    }
 }
