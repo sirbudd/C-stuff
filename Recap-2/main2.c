@@ -14,26 +14,28 @@ int main()
         printf("Nr %d este = %d\n",i,vector[i]);
     }
 
-    int array[N][M];
-
     printf("N = ");
     scanf("%d",&N);
     printf("M = ");
     scanf("%d",&M);
 
+    int array[N][M];
+    int array2 = 0;
     for (int i = 0;i < N; i++)
     {
         for(int j = 0;j < M; j++)
         {
             printf("Elem = ");
             scanf("%d",&array[i][j]);
+            printf("Elem [%d][%d] = %d\n",i,j,array[i][j]);
         }
     }
+    printf("%d \n\n",array[0][0]);
     for (int i = 0;i < N; i++)
     {
         for(int j = 0;j < M; j++)
         {
-            printf("Elementul [%d][%d] = %d",i,j,array[i][j]);
+            printf("Elementul [%d][%d] = %d ",i,j,array[i][j]);
         }
         printf("\n");
     }
